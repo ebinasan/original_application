@@ -26,6 +26,25 @@
 スタンプラリー機能と写真日記機能を組み合わせることで、ユーザーに楽しい体験と便利な記録を提供します。
 情報管理と共有: 道の駅ごとの情報管理やスタンプ機能があり、家族や友人と簡単に共有できます。
 
+
+◆◆追記◆◆
+・道の駅データ収集は道の駅公式サイトや関連団体が提供しているAPIがあり利用可能の場合そちらを使用。
+　国土交通省が提供する国土数値情報ダウンロードサイトの道の駅のデータを入手しようと考えています。
+　https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-P35.html#!
+
+・道の駅API
+　https://it-social.net/roadside_station/indexs.html
+
+・Yahoo社が提供するYOLP（Yahoo!ローカルサーチAPI、Yahoo!ジオコーダAPI）
+
+・google maps platformの（Google Places API、Maps JavaScript API）を使用することも視野に入れています。
+こちらを使用する場合、料金が発生するので、範囲を全国ではなく一部地域に絞ることも考えています。
+
+・スタンプはこちらの「Arctext.js」というスクリプトを使用して作成を考えています。
+　https://tympanus.net/codrops/2012/01/24/arctext-js-curving-text-with-css3-and-jquery/
+
+
+
 ###  機能候補　
 
 ### MVPリリース時に作りたい機能
