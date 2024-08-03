@@ -58,6 +58,27 @@
 ※ありなし選択は道の駅のスタンプ画像をアップロードしてくる可能性を考えてます。
 デザインは統一で地域ごとにカラーで分けようと思います。
 
+API以外に使用予定の技術の詳細（DBやバックエンド、フロントエンド、デプロイ先など）を記載頂けたらと思います。
+
+
+◆◆使用予定の技術◆◆
+・データベース
+　PostgreSQL、MySQL
+
+・バックエンド
+　Ruby 
+　Ruby on Rails
+　Devise
+　Active Storage
+
+・フロントエンド
+　HTML
+　CSS
+　JavaScript
+　jQuery
+
+・デプロイ先
+　プラットフォーム: Render.com または　Heroku　、 AWS　を使用
 
 
 
