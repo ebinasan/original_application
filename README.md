@@ -130,3 +130,6 @@ Xへの共有
 
 画面遷移図
 https://www.figma.com/design/F6owR6Vs7ioyjZcSaOw8ss/%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA?t=595wkLAk0GuQO58h-0
+
+ER図
+https://drive.google.com/file/d/1f3tmrmFHdcdsCSTPxHu2yXNsexlVCAIO/view?usp=sharing
