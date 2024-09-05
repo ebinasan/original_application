@@ -26,7 +26,10 @@ default: &default
 
 development:
   <<: *default
-  database: app_development
+  database: app_development 
+  url: postgresql://myapp_db_q7dx_user:rTzgMQtC6johDlep8L6VqBEvPO1wcpS3@dpg-crck9iaj1k6c73cnnv50-a/myapp_db_q7dx
+
+  
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
