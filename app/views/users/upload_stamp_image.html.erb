@@ -1,0 +1,6 @@
+<h2>スタンプ画像アップロード</h2>
+<%= form_with model: @stamp_image, local: true do |f| %>
+  <%= f.label :image, "画像を選択" %>
+  <%= f.file_field :image %>
+  <%= f.submit "アップロード" %>
+<% end %>

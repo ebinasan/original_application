@@ -1,0 +1,45 @@
+<% content_for :title, "道の駅の編集" %>
+
+<div class="container p-4">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <h1><%= t('.title', default: "道の駅の編集") %></h1>
+      
+      <%= form_with model: @road_station, local: true do |f| %>
+        
+        <div class="mb-3">
+          <%= f.label :name, "道の駅名" %>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+        <%= f.label :stamp_image, "スタンプ画像" %>
+        <%= f.file_field :stamp_image, class: "form-control", accept: 'image/*' %>
+      </div>
+        
+        <div class="mb-3">
+          <%= f.label :location, "場所" %>
+          <%= f.text_field :location, class: "form-control" %>
+        </div>
+        
+        <div class="mb-3">
+          <%= f.label :phone_number, "電話番号" %>
+          <%= f.text_field :phone_number, class: "form-control" %>
+        </div>
+        
+        <div class="mb-3">
+          <%= f.label :business_hours, "営業時間" %>
+          <%= f.text_field :business_hours, class: "form-control" %>
+        </div>
+        
+        <div class="mb-3">
+          <%= f.label :facility_amenities, "施設設備" %>
+          <%= f.text_area :facility_amenities, class: "form-control", rows: "5" %>
+        </div>
+        
+        <%= f.submit "更新", class: "btn btn-primary" %>
+        <%= link_to '戻る', road_station_path(@road_station), class: "btn btn-secondary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

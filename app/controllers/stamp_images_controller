@@ -1,0 +1,22 @@
+class StampImagesController < ApplicationController
+
+  def show  
+    @road_station = RoadStation.find(params[:id])
+    @stamp_image = StampImage.find_by(road_station_id: @road_station.id) # ここを確認
+  end
+
+  def create
+    @stamp_image = StampImage.new(stamp_image_params)
+    if @stamp_image.save
+      redirect_to @stamp_image, notice: 'スタンプラリーが作成されました。'
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def stamp_image_params
+    params.require(:stamp_image).permit(:image, :user_id, :road_station_id)
+  end
+end
