@@ -1,0 +1,10 @@
+<h2>デザイン選択</h2>
+<%= form_with model: @stamp_image, local: true do |f| %>
+  <%= f.label :design_option, "デザインあり" %>
+  <%= f.radio_button :design_option, true %>
+
+  <%= f.label :design_option, "デザインなし" %>
+  <%= f.radio_button :design_option, false %>
+
+  <%= f.submit "選択" %>
+<% end %>

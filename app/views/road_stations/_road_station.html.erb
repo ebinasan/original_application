@@ -1,0 +1,28 @@
+<div class="col-sm-12 col-lg-4 mb-3">
+  <div id="road-station-id-<%= road_station.id %>">
+    <div class="card">
+      <!-- 道の駅の画像があれば、以下のように変更することも可能 -->
+      <!-- 道の駅の画像がない場合はプレースホルダー画像を表示 -->
+      
+      <div class="card-body">
+        <div class="d-flex">
+          <h4 class="card-title">
+            <%= link_to road_station.name, road_station_path(road_station) %>
+          </h4>
+          <div class='ms-auto'>
+            <%= link_to edit_road_station_path(road_station), id: "button-edit-#{road_station.id}" do %>
+              <i class="bi bi-pencil-fill"></i>
+            <% end %>
+            <%= link_to road_station_path(road_station), id: "button-delete-#{road_station.id}", method: :delete, data: { confirm: '本当に削除してもよろしいですか？' } do %>
+              <i class="bi bi-trash-fill"></i>
+            <% end %>
+          </div>
+        </div>
+        <ul class="list-inline">
+          <li><i class="bi bi-calendar"></i><%= l road_station.created_at, format: :short %></li>
+        </ul>
+        <p class="card-text"><%= road_station.facility_amenities %></p>
+      </div>
+    </div>
+  </div>
+</div>

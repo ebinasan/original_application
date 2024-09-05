@@ -1,0 +1,9 @@
+// Entry point for your Sass build
+@import "top";
+@import "header";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap/scss/bootstrap";
+
+.border-class {
+    border: 10px solid rgb(75, 135, 71); /* ふちの色や太さを指定 */
+  }
