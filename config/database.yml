@@ -27,7 +27,6 @@ default: &default
 development:
   <<: *default
   database: app_development 
-  url: postgresql://myapp_db_q5ql_user:pxVNI3lJbdZ2YSeg7FhdyYCipi6ynjE9@dpg-crcr94qj1k6c73cs2dm0-a/myapp_db_q5ql
 
   
 
