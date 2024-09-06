@@ -12,7 +12,7 @@
     </div>
     <div class="col">
     <%= image_tag 'muji.png' , width: '70px', class: 'logo-image' %>
-      <%= link_to 'マイページ', login_path, class: "text-white nav-link" %>
+      <%= link_to 'マイページ', user_path(current_user), class: "text-white nav-link" %>
     </div>
   </div>
 </div>
