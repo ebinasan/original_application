@@ -19,7 +19,7 @@
           </div>
         </div>
         <ul class="list-inline">
-          <li><i class="bi bi-calendar"></i><%= l road_station.created_at, format: :short %></li>
+          <li><i class="bi bi-calendar"></i><%= road_station.created_at.strftime("%Y年%m月%d日") %></li>
         </ul>
         <p class="card-text"><%= road_station.facility_amenities %></p>
       </div>

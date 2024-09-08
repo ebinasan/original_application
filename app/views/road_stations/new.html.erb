@@ -1,43 +1,33 @@
 <div class="container p-4">
   <div class="row">
     <div class="col-lg-8 offset-lg-2">
-      <h1>道の駅を登録する</h1>
-      <%= form_with(model: @road_station, local: true) do |f| %>
-        <% if @road_station.errors.any? %>
-          <div class="alert alert-danger">
-            <h4 class="alert-heading">エラーがあります:</h4>
-            <ul>
-              <% @road_station.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
-        
-        <div class="form-group">
+      <h1 class="mb-4">道の駅を登録する</h1>
+      <%= form_with(model: @road_station, local: true) do |f| %>     
+        <div class="form-group mb-3">
           <%= f.label :name, "道の駅の名前" %>
-          <%= f.text_field :name, class: "form-control" %>
+          <%= f.text_field :name, class: "form-control", placeholder: "例: 道の駅 富士山" %>
         </div>
 
-        <div class="form-group">
+        <div class="form-group mb-3">
           <%= f.label :location, "場所" %>
-          <%= f.text_field :location, class: "form-control" %>
+          <%= f.text_field :location, class: "form-control", placeholder: "例: 静岡県富士市" %>
         </div>
 
-        <div class="form-group">
+        <div class="form-group mb-3">
           <%= f.label :phone_number, "電話番号" %>
-          <%= f.telephone_field :phone_number, class: "form-control" %>
+          <%= f.telephone_field :phone_number, class: "form-control", placeholder: "例: 0123-45-6789" %>
         </div>
 
-        <div class="form-group">
+        <div class="form-group mb-3">
           <%= f.label :business_hours, "営業時間" %>
-          <%= f.text_field :business_hours, class: "form-control" %>
+          <%= f.text_field :business_hours, class: "form-control", placeholder: "例: 9:00 AM - 6:00 PM" %>
         </div>
 
-        <div class="form-group">
+        <div class="form-group mb-4">
           <%= f.label :facility_amenities, "施設設備" %>
-          <%= f.text_area :facility_amenities, class: "form-control" %>
+          <%= f.text_area :facility_amenities, class: "form-control", rows: 4, placeholder: "例: 駐車場、トイレ、レストラン" %>
         </div>
+
         <%= f.submit "登録", class: "btn btn-primary" %>
       <% end %>
     </div>
