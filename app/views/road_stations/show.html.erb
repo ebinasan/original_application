@@ -4,29 +4,41 @@
       <h1>道の駅 <%= @road_station.name %></h1>
       <div class="card">
         <div class="card-body">
-        <% if @stamp_image.present? %>
-      <%= image_tag @stamp_image.image %>
-      <% else %>
-       <%= form_with model: @stamp_image, local: true do |form| %>
-        <%= form.label :image, "道の駅の写真" %>
-        <%= form.file_field :image %>
-        <br><br>
-      
-        <%= form.label :design, "スタンプラリーデザインありなし" %>
-        <%= form.select :design, options_for_select([['あり', true], ['なし', false]]), { onchange: 'updateBorder(this.value)' } %>
-        <br><br>
-        <%= form.submit "スタンプラリーを作成" %>
-      <% end %>
-      
-      <% end %>
+        <% @road_station.stamp_images.each do |stamp_image| %>
+          <% if stamp_image.present? && stamp_image.image.present? %>
+            <%= link_to road_station_stamp_image_path(@road_station, stamp_image) do %>
+              <% if stamp_image.has_design %>
+                <%= image_tag stamp_image.image, size: '150x150', class: 'rounded-circle m-2 border-design border border-danger-subtle border-5' %>
+              <% else %>
+                <%= image_tag stamp_image.image, size: '150x150', class: 'rounded-circle m-2' %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+        <%# スタンプ画像のアップロードフォーム %>
+        <%= form_with(model: [@road_station, @road_station.stamp_images.build], local: true, html: { multipart: true }) do |f| %>
+          <div class="form-group">
+            <%= f.label :image, "スタンプ画像" %>
+            <%= f.file_field :image, class: "form-control" %>
+          </div>
+          <div class=" pt-2">
+            <%= f.label :has_design, "デザインの有無" %>
+            <%= f.select :has_design, options_for_select([['デザインあり', true], ['デザインなし', false]], f.object.has_design), {}, class: 'form-control' %>
+          </div>
+            <%= f.submit "画像登録", class: "btn btn-primary mt-2" %>
+        <% end %>
+
       <br>
           <p><strong>場所:</strong> <%= @road_station.location %></p>
           <p><strong>電話番号:</strong> <%= @road_station.phone_number %></p>
           <p><strong>営業時間:</strong> <%= @road_station.business_hours %></p>
           <p><strong>施設設備:</strong> <%= @road_station.facility_amenities %></p>
+          <!-- ボタン類 -->
+          <div class="d-flex gap-2 mt-3">
           <%= link_to '編集', edit_road_station_path(@road_station), class: "btn btn-secondary" %>
           <%= link_to '戻る', road_stations_path, class: "btn btn-primary" %>
-          
+          <%= button_to '削除', road_station_path(@road_station), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
+           </div>
         </div>
       </div>
     </div>

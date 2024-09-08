@@ -24,3 +24,10 @@
     font-size: 2.0rem;
   }
 }
+
+@media screen and (max-width: 767px) {
+  tr.flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+}

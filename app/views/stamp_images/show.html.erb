@@ -1,0 +1,26 @@
+<div class="container p-4">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="card">
+        <div class="card-body text-center"> <!-- 中央寄せを追加 -->
+          <div class="stamp-image-details">
+            <!-- 画像表示 -->
+            <%= image_tag @stamp_image.image, size: '300x300', class: 'rounded-circle p-2 mb-4' %>
+
+            <!-- スタンプ詳細 -->
+            <h1>スタンプ画像の詳細</h1>
+            <h2>道の駅: <%= @road_station.name %></h2>
+            <p>登録日時: <%= @stamp_image.created_at.strftime("%Y年%m月%d日") %></p>
+
+            <!-- ボタン類 -->
+            <div class="d-flex justify-content-center gap-2 mt-3">
+              <%= link_to '編集', edit_road_station_stamp_image_path(@stamp_image.road_station, @stamp_image), class: 'btn btn-primary' %>
+              <%= link_to '戻る', road_station_path(@road_station), class: 'btn btn-secondary' %>
+              <%= button_to '削除', road_station_stamp_image_path(@road_station, @stamp_image), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

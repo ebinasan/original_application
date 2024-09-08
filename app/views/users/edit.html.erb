@@ -12,17 +12,17 @@
           <%= f.email_field :email, class: "form-control" %>
         </div>
         <div class="mb-3">
-          <%= f.label :password, "パスワード", class: "form-label" %>
+          <%= f.label :password, "パスワード (変更する場合のみ入力)", class: "form-label" %>
           <%= f.password_field :password, class: "form-control" %>
         </div>
         <div class="mb-3">
-          <%= f.label :crypted_password, "パスワード確認", class: "form-label" %>
-          <%= f.password_field :crypted_password, class: "form-control" %>
+          <%= f.label :password_confirmation, "パスワード確認", class: "form-label" %>
+          <%= f.password_field :password_confirmation, class: "form-control" %>
         </div>
         <%= f.submit "更新", class: "btn btn-primary" %>
       <% end %>
       <div class='text-center'>
-        <%= link_to 'プロフィールへ戻る', user_path(@user) %>
+        <%= link_to 'プロフィールへ戻る', user_path(@user), class: 'btn btn-secondary mt-3' %>
       </div>
     </div>
   </div>

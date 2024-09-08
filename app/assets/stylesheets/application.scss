@@ -7,3 +7,8 @@
 .border-class {
     border: 10px solid rgb(75, 135, 71); /* ふちの色や太さを指定 */
   }
+  .border-design {
+    border: 30px solid #569456; /* デザインのための境界線を追加 */
+    padding: 5px; /* 画像と境界線の間にスペースを追加 */
+  }
+  

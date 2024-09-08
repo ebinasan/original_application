@@ -11,7 +11,7 @@ class RoadStationsController < ApplicationController
   def create
     @road_station = current_user.road_stations.new(road_station_params) # ユーザーIDを自動で設定
     if @road_station.save
-      redirect_to road_stations_path, notice: "道の駅の登録に成功しました"
+      redirect_to road_stations_path, success: "道の駅の登録に成功しました"
     else
       Rails.logger.debug(@road_station.errors.full_messages)
       flash.now[:danger] = "道の駅の登録に失敗しました"
@@ -21,6 +21,7 @@ class RoadStationsController < ApplicationController
 
   def show
     @road_station = RoadStation.find(params[:id])
+    @stamp_image = StampImage.new
   end
 
   def edit
@@ -30,7 +31,7 @@ class RoadStationsController < ApplicationController
   def update
     @road_station = RoadStation.find(params[:id])
     if @road_station.update(road_station_params)
-      redirect_to road_station_path(@road_station), notice: "道の駅の更新に成功しました"
+      redirect_to road_station_path(@road_station), success: "道の駅の更新に成功しました"
     else
       Rails.logger.debug(@road_station.errors.full_messages)
       flash.now[:danger] = "道の駅の更新に失敗しました"
@@ -41,7 +42,7 @@ class RoadStationsController < ApplicationController
   def destroy
     @road_station = RoadStation.find(params[:id])
     @road_station.destroy
-    redirect_to road_stations_path, notice: "道の駅の削除に成功しました"
+    redirect_to road_stations_path, danger: "道の駅の削除しました"
   end
 
     
