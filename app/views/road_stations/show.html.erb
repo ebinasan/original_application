@@ -8,7 +8,7 @@
           <% if stamp_image.present? && stamp_image.image.present? %>
             <%= link_to road_station_stamp_image_path(@road_station, stamp_image) do %>
               <% if stamp_image.has_design %>
-                <%= image_tag stamp_image.image, size: '150x150', class: 'rounded-circle m-2 border-design border border-danger-subtle border-5' %>
+                <%= image_tag stamp_image.image, size: '150x150', class: 'rounded-circle m-2 border border-danger-subtle border-5' %>
               <% else %>
                 <%= image_tag stamp_image.image, size: '150x150', class: 'rounded-circle m-2' %>
               <% end %>
